@@ -4,6 +4,10 @@
 
 [Full Changelog](https://github.com/alejandrohdezma/sbt-mdoc-toc/compare/v0.2...HEAD)
 
+🚀 **Features**
+
+- Add `sbt-remove-test-from-pom` plugin [\#31](https://github.com/alejandrohdezma/sbt-mdoc-toc/pull/31) ([alejandrohdezma](https://github.com/alejandrohdezma))
+
 📈 **Dependency updates**
 
 - Update sbt to 1.3.9 [\#27](https://github.com/alejandrohdezma/sbt-mdoc-toc/pull/27) ([scala-steward](https://github.com/scala-steward))
