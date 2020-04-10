@@ -10,6 +10,7 @@
 
 📈 **Dependency updates**
 
+- Update sbt-header to 5.5.0 [\#35](https://github.com/alejandrohdezma/sbt-mdoc-toc/pull/35) ([scala-steward](https://github.com/scala-steward))
 - Update specs2-core to 4.9.3 [\#33](https://github.com/alejandrohdezma/sbt-mdoc-toc/pull/33) ([scala-steward](https://github.com/scala-steward))
 - Update sbt to 1.3.9 [\#27](https://github.com/alejandrohdezma/sbt-mdoc-toc/pull/27) ([scala-steward](https://github.com/scala-steward))
 - Update sbt-mdoc to 2.1.3 [\#26](https://github.com/alejandrohdezma/sbt-mdoc-toc/pull/26) ([scala-steward](https://github.com/scala-steward))
