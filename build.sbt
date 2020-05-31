@@ -8,8 +8,8 @@ addCommandAlias("ci-docs", "github; mdoc; headerCreateAll")
 addCommandAlias("ci-publish", "github; ci-release")
 
 //These are the only external dependencies
-val `sbt-mdoc` = "org.scalameta" % "sbt-mdoc" % "[2.0,)" % Provided // scala-steward:off
-val mdoc       = "org.scalameta" %% "mdoc"    % "[2.0,)" % Provided // scala-steward:off
+val `sbt-mdoc` = "org.scalameta"  % "sbt-mdoc" % "[2.0,)" % Provided // scala-steward:off
+val mdoc       = "org.scalameta" %% "mdoc"     % "[2.0,)" % Provided // scala-steward:off
 
 skip in publish := true
 
