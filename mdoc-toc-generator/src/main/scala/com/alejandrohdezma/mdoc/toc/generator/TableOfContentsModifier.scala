@@ -29,9 +29,10 @@ class TableOfContentsModifier extends PostModifier {
 
   override val name = "toc"
 
-  override def process(ctx: PostModifierContext): String = ctx.originalCode match {
-    case Input.Slice(Input.VirtualFile(_, text), _, _) => Generator.toc(text)
-    case _                                             => ""
-  }
+  override def process(ctx: PostModifierContext): String =
+    ctx.originalCode match {
+      case Input.Slice(Input.VirtualFile(_, text), _, _) => Generator.toc(text)
+      case _                                             => ""
+    }
 
 }
