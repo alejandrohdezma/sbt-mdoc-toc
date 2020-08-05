@@ -31,4 +31,4 @@ lazy val `mdoc-toc-generator` = project
   .settings(crossScalaVersions := Seq("2.12.11", "2.13.1"))
   .settings(buildInfoPackage := "com.alejandrohdezma.mdoc.toc.generator")
   .settings(libraryDependencies += mdoc)
-  .settings(libraryDependencies += "org.specs2" %% "specs2-core" % "4.10.1" % Test)
+  .settings(libraryDependencies += "org.specs2" %% "specs2-core" % "4.10.2" % Test)
