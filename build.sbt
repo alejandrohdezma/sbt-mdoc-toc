@@ -1,13 +1,14 @@
-ThisBuild / scalaVersion := "2.12.12"
-ThisBuild / organization := "com.alejandrohdezma"
+ThisBuild / scalaVersion                  := "2.12.12"
+ThisBuild / organization                  := "com.alejandrohdezma"
+ThisBuild / pluginCrossBuild / sbtVersion := "1.2.8"
 
 addCommandAlias("ci-test", "fix --check; mdoc; +test; +publishLocal; scripted")
 addCommandAlias("ci-docs", "github; mdoc; headerCreateAll")
 addCommandAlias("ci-publish", "github; ci-release")
 
 //These are the only external dependencies
-val `sbt-mdoc` = "org.scalameta" % "sbt-mdoc" % "[2.0,)" % Provided // scala-steward:off
-val mdoc       = "org.scalameta" %% "mdoc"    % "[2.0,)" % Provided // scala-steward:off
+val `sbt-mdoc` = "org.scalameta"  % "sbt-mdoc" % "[2.0,)" % Provided // scala-steward:off
+val mdoc       = "org.scalameta" %% "mdoc"     % "[2.0,)" % Provided // scala-steward:off
 
 skip in publish := true
 
