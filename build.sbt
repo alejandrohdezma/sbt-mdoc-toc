@@ -2,7 +2,7 @@ ThisBuild / scalaVersion                  := "2.12.12"
 ThisBuild / organization                  := "com.alejandrohdezma"
 ThisBuild / pluginCrossBuild / sbtVersion := "1.2.8"
 
-addCommandAlias("ci-test", "fix --check; mdoc; +test; +publishLocal; scripted")
+addCommandAlias("ci-test", "fix --check; mdoc; +test; scripted")
 addCommandAlias("ci-docs", "github; mdoc; headerCreateAll")
 addCommandAlias("ci-publish", "github; ci-release")
 
@@ -12,8 +12,7 @@ val mdoc       = "org.scalameta" %% "mdoc"     % "[2.0,)" % Provided // scala-st
 
 skip in publish := true
 
-lazy val `docs` = project
-  .in(file("sbt-mdoc-toc-docs"))
+lazy val `documentation` = project
   .enablePlugins(MdocPlugin)
   .dependsOn(`mdoc-toc-generator`)
   .settings(skip in publish := true)
@@ -22,6 +21,7 @@ lazy val `docs` = project
 lazy val `sbt-mdoc-toc` = project
   .enablePlugins(SbtPlugin)
   .dependsOn(`mdoc-toc-generator`)
+  .settings(publishLocal := publishLocal.dependsOn(`mdoc-toc-generator` / publishLocal).value)
   .settings(scriptedLaunchOpts += s"-Dplugin.version=${version.value}")
   .settings(addSbtPlugin(`sbt-mdoc`))
 
