@@ -11,6 +11,7 @@ Miau miau
 - [Integrations](#integrations)
   - [Integration one](#integration-one)
   - [Integration two](#integration-two)
+  - [`the-thing.txt`](#the-thingtxt)
     - [How does it work?](#how-does-it-work)
     - [Example](#example)
 
@@ -41,6 +42,10 @@ Miau miau miau
 ### Integration two
 
 Miau miau miau
+
+### [`the-thing.txt`](https://www.example.com)
+
+Testing that a link in header is normalized
 
 #### How does it work?
 

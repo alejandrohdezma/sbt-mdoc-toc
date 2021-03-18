@@ -34,6 +34,7 @@ class TableOfContentsModifierSpec extends Specification {
         |##### 3.1.1.1
         |###### 3.1.1.1.1
         |####### 3.1.1.1.1.1
+        |### [`something`](https://example.com)
         |## 4
         |## 5
         |### 5.1
@@ -55,6 +56,7 @@ class TableOfContentsModifierSpec extends Specification {
         |      - [3.1.1.1](#3111)
         |        - [3.1.1.1.1](#31111)
         |          - [3.1.1.1.1.1](#311111)
+        |  - [`something`](#something)
         |- [4](#4)
         |- [5](#5)
         |  - [5.1](#51)
