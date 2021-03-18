@@ -3,6 +3,7 @@
 Miau miau
 
 ```scala mdoc:toc
+
 ```
 
 ## Installation
@@ -32,6 +33,10 @@ Miau miau miau
 ### Integration two
 
 Miau miau miau
+
+### [`the-thing.txt`](https://www.example.com)
+
+Testing that a link in header is normalized
 
 #### How does it work?
 

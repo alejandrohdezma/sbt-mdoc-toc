@@ -23,12 +23,12 @@ object Generator {
       .split('\n')
       .filter(_.startsWith("##"))
       .map {
-        case H2(header) => s"- [$header](#${link(header)})"
-        case H3(header) => s"  - [$header](#${link(header)})"
-        case H4(header) => s"    - [$header](#${link(header)})"
-        case H5(header) => s"      - [$header](#${link(header)})"
-        case H6(header) => s"        - [$header](#${link(header)})"
-        case H7(header) => s"          - [$header](#${link(header)})"
+        case H2(normalize(header)) => s"- [$header](#${link(header)})"
+        case H3(normalize(header)) => s"  - [$header](#${link(header)})"
+        case H4(normalize(header)) => s"    - [$header](#${link(header)})"
+        case H5(normalize(header)) => s"      - [$header](#${link(header)})"
+        case H6(normalize(header)) => s"        - [$header](#${link(header)})"
+        case H7(normalize(header)) => s"          - [$header](#${link(header)})"
       }
       .mkString("---\n\n", "\n", "\n")
 
@@ -45,5 +45,16 @@ object Generator {
   private val H5 = s"##### (.*)".r
   private val H6 = s"###### (.*)".r
   private val H7 = s"####### (.*)".r
+
+  object normalize {
+
+    val linkRegex = """\[(.*)\]\(.*\)""".r
+
+    def unapply(header: String): Option[String] = header match {
+      case linkRegex(linkName) => unapply(linkName)
+      case _                   => Some(header)
+    }
+
+  }
 
 }
