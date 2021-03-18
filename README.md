@@ -14,7 +14,7 @@ This plugin enables generating a table of contents for markdown files using [`md
 Add the following line to your `plugins.sbt` file:
 
 ```sbt
-addSbtPlugin("com.alejandrohdezma" % "sbt-mdoc-toc" % "0.2")
+addSbtPlugin("com.alejandrohdezma" % "sbt-mdoc-toc" % "0.3.0")
 ```
 
 ## Usage
