@@ -21,10 +21,9 @@ import scala.meta.inputs.Input
 import mdoc.PostModifier
 import mdoc.PostModifierContext
 
-/**
- * Parses markdown files and generates its table of contents
- * when a `mdoc:toc` scala code block is encountered.
- */
+/** Parses markdown files and generates its table of contents
+  * when a `mdoc:toc` scala code block is encountered.
+  */
 class TableOfContentsModifier extends PostModifier {
 
   override val name = "toc"
