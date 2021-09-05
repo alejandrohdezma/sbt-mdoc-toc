@@ -22,8 +22,8 @@ import sbt._
 import com.alejandrohdezma.mdoc.toc.generator.BuildInfo
 import mdoc.MdocPlugin
 
-/** Automatically adds a dependency with current version of `mdoc-toc-generator` to
-  * any project that has enabled the `MdocPlugin`.
+/** Automatically adds a dependency with current version of `mdoc-toc-generator` to any project that has enabled the
+  * `MdocPlugin`.
   */
 object SbtMdocTocPlugin extends AutoPlugin {
 

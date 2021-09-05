@@ -63,7 +63,7 @@ class TableOfContentsModifierSpec extends Specification {
         |    - [5.1.1](#511)
         |""".stripMargin
 
-    toc must be equalTo expected
+    (toc must be).equalTo(expected)
   }
 
 }
