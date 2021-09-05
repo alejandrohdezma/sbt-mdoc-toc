@@ -40,10 +40,15 @@ object Generator {
       .toLowerCase
 
   private val H2 = s"## (.*)".r
+
   private val H3 = s"### (.*)".r
+
   private val H4 = s"#### (.*)".r
+
   private val H5 = s"##### (.*)".r
+
   private val H6 = s"###### (.*)".r
+
   private val H7 = s"####### (.*)".r
 
   object normalize {
