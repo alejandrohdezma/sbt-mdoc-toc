@@ -29,7 +29,9 @@ object Generator {
         case H5(normalize(header)) => s"      - [$header](#${link(header)})"
         case H6(normalize(header)) => s"        - [$header](#${link(header)})"
         case H7(normalize(header)) => s"          - [$header](#${link(header)})"
+        case _                     => ""
       }
+      .filter(_.nonEmpty)
       .mkString("---\n\n", "\n", "\n")
 
   def link(header: String): String =
