@@ -16,11 +16,9 @@
 
 package com.alejandrohdezma.mdoc.toc.generator
 
-import org.specs2.mutable.Specification
+class TableOfContentsModifierSuite extends munit.FunSuite {
 
-class TableOfContentsModifierSpec extends Specification {
-
-  "Generates table of contents for markdown file" >> {
+  test("Generates table of contents for markdown file") {
     val markdown =
       """# The title
         |
@@ -63,7 +61,7 @@ class TableOfContentsModifierSpec extends Specification {
         |    - [5.1.1](#511)
         |""".stripMargin
 
-    (toc must be).equalTo(expected)
+    assertEquals(toc, expected)
   }
 
 }
