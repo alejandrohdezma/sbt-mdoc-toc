@@ -1,0 +1,3 @@
+# this test ensures `sbt-mdoc-toc` can create a table-of-contents
+> mdoc
+$ must-mirror target/mdoc/DOCS.md DOCS.md
