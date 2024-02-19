@@ -3,9 +3,9 @@ ThisBuild / organization                  := "com.alejandrohdezma"
 ThisBuild / pluginCrossBuild / sbtVersion := "1.2.8"
 ThisBuild / versionPolicyIntention        := Compatibility.BinaryAndSourceCompatible
 
-addCommandAlias("ci-test", "scalafmtCheckAll; scalafmtSbtCheck; mdoc; +test; +publishLocal; scripted")
+addCommandAlias("ci-test", "fix --check; versionPolicyCheck; mdoc; +test; +publishLocal; scripted")
 addCommandAlias("ci-docs", "github; mdoc; headerCreateAll")
-addCommandAlias("ci-publish", "github; ci-release")
+addCommandAlias("ci-publish", "versionCheck; github; ci-release")
 
 //These are the only external dependencies
 val `sbt-mdoc` = "org.scalameta" % "sbt-mdoc" % "[2.0,)" % Provided // scala-steward:off
