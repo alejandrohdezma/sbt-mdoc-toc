@@ -1,4 +1,4 @@
-ThisBuild / scalaVersion                  := "2.12.19"
+ThisBuild / scalaVersion                  := "2.12.20"
 ThisBuild / organization                  := "com.alejandrohdezma"
 ThisBuild / pluginCrossBuild / sbtVersion := "1.2.8"
 ThisBuild / versionPolicyIntention        := Compatibility.BinaryAndSourceCompatible
@@ -26,7 +26,7 @@ lazy val `sbt-mdoc-toc` = module
 
 lazy val `mdoc-toc-generator` = module
   .enablePlugins(BuildInfoPlugin)
-  .settings(crossScalaVersions := Seq("2.12.19", "2.13.14", "3.3.3"))
+  .settings(crossScalaVersions := Seq("2.12.20", "2.13.14", "3.3.3"))
   .settings(buildInfoPackage := "com.alejandrohdezma.mdoc.toc.generator")
   .settings(libraryDependencies += mdoc)
   .settings(libraryDependencies += "org.scalameta" %% "munit" % "1.0.1" % Test)
