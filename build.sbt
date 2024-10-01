@@ -26,7 +26,7 @@ lazy val `sbt-mdoc-toc` = module
 
 lazy val `mdoc-toc-generator` = module
   .enablePlugins(BuildInfoPlugin)
-  .settings(crossScalaVersions := Seq("2.12.20", "2.13.15", "3.3.3"))
+  .settings(crossScalaVersions := Seq("2.12.20", "2.13.15", "3.3.4"))
   .settings(buildInfoPackage := "com.alejandrohdezma.mdoc.toc.generator")
   .settings(libraryDependencies += mdoc)
   .settings(libraryDependencies += "org.scalameta" %% "munit" % "1.0.2" % Test)
