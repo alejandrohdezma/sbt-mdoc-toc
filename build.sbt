@@ -29,4 +29,4 @@ lazy val `mdoc-toc-generator` = module
   .settings(crossScalaVersions := Seq("2.12.20", "2.13.15", "3.3.4"))
   .settings(buildInfoPackage := "com.alejandrohdezma.mdoc.toc.generator")
   .settings(libraryDependencies += mdoc)
-  .settings(libraryDependencies += "org.scalameta" %% "munit" % "1.0.2" % Test)
+  .settings(libraryDependencies += "org.scalameta" %% "munit" % "1.0.3" % Test)
