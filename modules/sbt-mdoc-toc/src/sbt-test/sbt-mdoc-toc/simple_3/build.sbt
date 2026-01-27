@@ -1,3 +1,3 @@
-ThisBuild / scalaVersion := "3.3.6"
+ThisBuild / scalaVersion := "3.3.7"
 
 lazy val root = project.in(file(".")).enablePlugins(MdocPlugin)
