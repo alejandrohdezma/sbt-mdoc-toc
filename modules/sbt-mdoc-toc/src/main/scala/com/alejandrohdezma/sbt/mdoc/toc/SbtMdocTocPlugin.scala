@@ -31,7 +31,7 @@ object SbtMdocTocPlugin extends AutoPlugin {
 
   override def requires: Plugins = MdocPlugin
 
-  override def projectSettings: Seq[Def.Setting[_]] =
+  override def projectSettings: Seq[Def.Setting[?]] =
     Seq(
       libraryDependencies += "com.alejandrohdezma" %% "mdoc-toc-generator" % BuildInfo.version
     )
