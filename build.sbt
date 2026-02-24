@@ -4,6 +4,11 @@ ThisBuild / organization                  := "com.alejandrohdezma"
 ThisBuild / pluginCrossBuild / sbtVersion := scalaBinaryVersion.value.on(2)("1.2.8").getOrElse("2.0.0-RC9")
 ThisBuild / versionPolicyIntention        := Compatibility.None
 
+// Scala 3.8.1 cannot be compiled with JDK 11
+ThisBuild / fileTransformers += ".github/workflows/ci.yml" -> { (content: String) =>
+  content.linesIterator.filter(!_.contains("- 11")).mkString("\n")
+}
+
 addCommandAlias("ci-test", "fix --check; versionPolicyCheck; mdoc; +test; +publishLocal; +sbt-mdoc-toc/scripted")
 addCommandAlias("ci-docs", "github; mdoc; headerCreateAll")
 addCommandAlias("ci-publish", "versionCheck; github; ci-release")
