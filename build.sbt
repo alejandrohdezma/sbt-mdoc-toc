@@ -1,9 +1,10 @@
-ThisBuild / scalaVersion                  := "2.12.21"
+ThisBuild / scalaVersion                  := "3.8.1"
+ThisBuild / crossScalaVersions            := List("3.8.1", "2.12.21")
 ThisBuild / organization                  := "com.alejandrohdezma"
-ThisBuild / pluginCrossBuild / sbtVersion := "1.2.8"
-ThisBuild / versionPolicyIntention        := Compatibility.BinaryAndSourceCompatible
+ThisBuild / pluginCrossBuild / sbtVersion := scalaBinaryVersion.value.on(2)("1.2.8").getOrElse("2.0.0-RC9")
+ThisBuild / versionPolicyIntention        := Compatibility.None
 
-addCommandAlias("ci-test", "fix --check; versionPolicyCheck; mdoc; +test; +publishLocal; scripted")
+addCommandAlias("ci-test", "fix --check; versionPolicyCheck; mdoc; +test; +publishLocal; +sbt-mdoc-toc/scripted")
 addCommandAlias("ci-docs", "github; mdoc; headerCreateAll")
 addCommandAlias("ci-publish", "versionCheck; github; ci-release")
 
@@ -23,6 +24,7 @@ lazy val `sbt-mdoc-toc` = module
   .settings(publishLocal := publishLocal.dependsOn(`mdoc-toc-generator` / publishLocal).value)
   .settings(scriptedLaunchOpts += s"-Dplugin.version=${version.value}")
   .settings(addSbtPlugin(`sbt-mdoc`))
+  .settings(scriptedSbt := (pluginCrossBuild / sbtVersion).value)
 
 lazy val `mdoc-toc-generator` = module
   .enablePlugins(BuildInfoPlugin)
