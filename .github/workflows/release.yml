@@ -46,7 +46,7 @@ jobs:
       - name: Run Coursier Setup Action
         uses: coursier/setup-action@f7be3eb3dcef84a4e16fc8cd75c87beb2e5cbcc9 # v2.0.2
         with:
-          jvm: liberica:11
+          jvm: liberica:17
           apps: sbt
 
       - name: Run `sbt ci-publish`

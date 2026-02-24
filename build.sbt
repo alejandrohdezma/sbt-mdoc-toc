@@ -8,6 +8,9 @@ ThisBuild / versionPolicyIntention        := Compatibility.None
 ThisBuild / fileTransformers += ".github/workflows/ci.yml" -> { (content: String) =>
   content.linesIterator.filter(!_.contains("- 11")).mkString("\n")
 }
+ThisBuild / fileTransformers += ".github/workflows/release.yml" -> { (content: String) =>
+  content.replace("liberica:11", "liberica:17")
+}
 
 addCommandAlias("ci-test", "fix --check; versionPolicyCheck; mdoc; +test; +publishLocal; +sbt-mdoc-toc/scripted")
 addCommandAlias("ci-docs", "github; mdoc; headerCreateAll")
