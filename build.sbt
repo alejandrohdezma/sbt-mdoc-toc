@@ -1,10 +1,10 @@
-ThisBuild / scalaVersion                  := "3.8.1"
-ThisBuild / crossScalaVersions            := List("3.8.1", "2.12.21")
+ThisBuild / scalaVersion                  := "3.8.4"
+ThisBuild / crossScalaVersions            := List("3.8.4", "2.12.21")
 ThisBuild / organization                  := "com.alejandrohdezma"
 ThisBuild / pluginCrossBuild / sbtVersion := scalaBinaryVersion.value.on(2)("1.2.8").getOrElse("2.0.0-RC9")
 ThisBuild / versionPolicyIntention        := Compatibility.None
 
-// Scala 3.8.1 cannot be compiled with JDK 11
+// Scala 3.8.4 cannot be compiled with JDK 11
 ThisBuild / fileTransformers += ".github/workflows/ci.yml" -> { (content: String) =>
   content.linesIterator.filter(!_.contains("- 11")).mkString("\n")
 }
@@ -36,7 +36,7 @@ lazy val `sbt-mdoc-toc` = module
 
 lazy val `mdoc-toc-generator` = module
   .enablePlugins(BuildInfoPlugin)
-  .settings(crossScalaVersions := Seq("2.12.21", "2.13.18", "3.3.7"))
+  .settings(crossScalaVersions := Seq("2.12.21", "2.13.18", "3.3.8"))
   .settings(buildInfoPackage := "com.alejandrohdezma.mdoc.toc.generator")
   .settings(libraryDependencies += mdoc)
-  .settings(libraryDependencies += "org.scalameta" %% "munit" % "1.2.2" % Test)
+  .settings(libraryDependencies += "org.scalameta" %% "munit" % "1.2.4" % Test)
