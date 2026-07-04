@@ -4,7 +4,7 @@ ThisBuild / organization                  := "com.alejandrohdezma"
 ThisBuild / pluginCrossBuild / sbtVersion := scalaBinaryVersion.value.on(2)("1.12.13").getOrElse("2.0.0")
 ThisBuild / versionPolicyIntention        := Compatibility.None
 
-addCommandAlias("ci-test", "fix --check; versionPolicyCheck; mdoc; +test; +publishLocal; +sbt-mdoc-toc/scripted")
+addCommandAlias("ci-test", "fix --check; versionPolicyCheck; +test; +publishLocal; +sbt-mdoc-toc/scripted; mdoc")
 addCommandAlias("ci-docs", "github; mdoc; headerCreateAll")
 addCommandAlias("ci-publish", "versionCheck; github; ci-release")
 
