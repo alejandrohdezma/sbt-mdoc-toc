@@ -1,18 +1,10 @@
 ThisBuild / scalaVersion                  := "3.8.4"
 ThisBuild / crossScalaVersions            := List("3.8.4", "2.12.21")
 ThisBuild / organization                  := "com.alejandrohdezma"
-ThisBuild / pluginCrossBuild / sbtVersion := scalaBinaryVersion.value.on(2)("1.2.8").getOrElse("2.0.0-RC9")
+ThisBuild / pluginCrossBuild / sbtVersion := scalaBinaryVersion.value.on(2)("1.12.13").getOrElse("2.0.0")
 ThisBuild / versionPolicyIntention        := Compatibility.None
 
-// Scala 3.8.4 cannot be compiled with JDK 11
-ThisBuild / fileTransformers += ".github/workflows/ci.yml" -> { (content: String) =>
-  content.linesIterator.filter(!_.contains("- 11")).mkString("\n")
-}
-ThisBuild / fileTransformers += ".github/workflows/release.yml" -> { (content: String) =>
-  content.replace("liberica:11", "liberica:17")
-}
-
-addCommandAlias("ci-test", "fix --check; versionPolicyCheck; mdoc; +test; +publishLocal; +sbt-mdoc-toc/scripted")
+addCommandAlias("ci-test", "fix --check; versionPolicyCheck; +test; +publishLocal; +sbt-mdoc-toc/scripted; mdoc")
 addCommandAlias("ci-docs", "github; mdoc; headerCreateAll")
 addCommandAlias("ci-publish", "versionCheck; github; ci-release")
 
